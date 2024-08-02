@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1102,2264</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1668,2749</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,29 +103,29 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This process is used to log in to ACMe site.If the page is not logged in , the credentials are taken from assets and the site is logged in else log a message that the page was already logged in. " DisplayName="Sequence : Log in to ACME" sap:VirtualizedContainerService.HintSize="1112,2230" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence sap2010:Annotation.AnnotationText="This process is used to log in to ACMe site.If the page is not logged in , the credentials are taken from assets and the site is logged in else log a message that the page was already logged in. " DisplayName="Sequence : Log in to ACME" sap:VirtualizedContainerService.HintSize="1678,2684" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - ACME browser" sap:VirtualizedContainerService.HintSize="1050,2111" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - ACME browser" sap:VirtualizedContainerService.HintSize="1616,2565" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do : log in to ACME" sap:VirtualizedContainerService.HintSize="1016,1871" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do : log in to ACME" sap:VirtualizedContainerService.HintSize="1582,2325" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message - Logged In or Logged Out" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Check if the user has already logged in or no.&quot;]" />
-            <uix:NCheckState sap2010:Annotation.AnnotationText="&quot;Check if the user has already logged in or no. If not logged in then log in to acme website&quot;" DisplayName="Check App State : Log In" sap:VirtualizedContainerService.HintSize="954,1606" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Timeout="[Convert.ToDouble(in_Config(&quot;CheckAppStateTime&quot;).ToString)]" Version="V3">
+            <ui:LogMessage DisplayName="Log Message - Logged In or Logged Out" sap:VirtualizedContainerService.HintSize="1520,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Check if the user has already logged in or no.&quot;]" />
+            <uix:NCheckState sap2010:Annotation.AnnotationText="&quot;Check if the user has already logged in or no. If not logged in then log in to acme website&quot;" DisplayName="Check App State : Log In" sap:VirtualizedContainerService.HintSize="1520,2060" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Timeout="[Convert.ToDouble(in_Config(&quot;CheckAppStateTime&quot;).ToString)]" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears : LogIn" sap:VirtualizedContainerService.HintSize="450,1333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Target appears : LogIn" sap:VirtualizedContainerService.HintSize="1016,1787" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="UserName" />
                     <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -135,8 +135,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;AssetName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential : UserName and Password for ACME" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[Password]" Username="[UserName]" />
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Username" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Text="[UserName]" Version="V3">
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;AssetName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential : UserName and Password for ACME" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[Password]" Username="[UserName]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Username" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Text="[UserName]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" CVScreenId="17f910dc-4fad-4141-bdb1-b58bc2a137f4" CvElementArea="306, 424, 489, 39" CvType="InputBox" DesignTimeRectangle="308, 426, 485, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='email' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='form-control ' aaname='Email:' /&gt;" Guid="3274b180-6a79-4215-9d0e-ba9eca27f4f7" InformativeScreenshot="01af801fb25039ae548cd69ddf4e64f2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -147,7 +147,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" IsPassword="True" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" SecureText="[Password]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" IsPassword="True" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" SecureText="[Password]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" CVScreenId="8442eaf9-2fbe-4d13-9cc5-775cbd077064" CvElementArea="306, 512, 489, 23" CvType="InputBox" DesignTimeRectangle="308, 500, 485, 34" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='form-control ' aaname='Password:' /&gt;" Guid="7f4543de-9c03-4981-9b83-52aaa757a3d8" InformativeScreenshot="c3e985c4762c405586426d63f3e194c2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -158,8 +158,8 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <ui:LogMessage DisplayName="Log Message : Credentials entered" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Username and password details are emtered&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message : Credentials entered" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Username and password details are emtered&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" CVScreenId="9ec3c32a-4a49-42c7-9ea0-7140b2971ee2" CvElementArea="306, 588, 63, 37" CvTextArea="319, 600, 37, 16" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="308, 590, 60, 34" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary' aaname='                             Login                         ' check:innerText='Login' /&gt;" Guid="4d5e019b-3c8d-4ca7-9e20-636893162ba9" InformativeScreenshot="c478f6a62a26196236b07d0306084c0c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -174,7 +174,32 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message: LogIn successfully" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Log In successfull&quot;]" />
+                  <uix:NCheckState DisplayName="Check App State 'These credentials'" sap:VirtualizedContainerService.HintSize="954,622" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="604ff253-8e7b-492c-9b34-e8f9f5bb1b6d" Timeout="[Convert.ToDouble(in_Config(&quot;CheckAppStateTime&quot;).ToString)]" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears : Failed" sap:VirtualizedContainerService.HintSize="450,380" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message : Invalid credentails" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Invalid credentails&quot;]" />
+                        <Throw DisplayName="Throw : Invalid credentails" Exception="[new SystemException(in_Config(&quot;InvalidCredentials&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear : Logged in" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message: LogIn successfully" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Log In successfull&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" CVScreenId="d10a8ae5-f0eb-4853-b067-d34a50ff01bc" CvTextArea="307, 463, 297, 13" CvTextArgument="These credentials do not match our records." CvType="Text" DesignTimeRectangle="308, 462, 296, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='STRONG' innertext='These credentials do not match our records.' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='STRONG' innertext='These credentials do not match our records.' type='' class='' aaname='These credentials do not match our records.' check:text='These credentials do not match our records.' /&gt;" Guid="661b18c6-af5f-4f19-a0c2-a13455e5572d" InformativeScreenshot="4f77e7dcae1455cc10e38f2561be66bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
